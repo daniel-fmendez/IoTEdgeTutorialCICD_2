@@ -60,5 +60,5 @@ stages:
         deploymentid: '$(System.TeamProject)-devops-deployment'
         priority: '0'
         deviceOption: 'Single Device'
-        deviceId: 'EDIoT2026Identity20'
+        deviceId: 'edgedeviceidentitybs0067'
 
