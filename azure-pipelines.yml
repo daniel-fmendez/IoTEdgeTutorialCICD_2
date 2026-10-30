@@ -46,19 +46,12 @@ stages:
 
     - task: AzureIoTEdge@2
       inputs:
-        action: 'Generate deployment manifest'
-        templateFilePath: 'deployment.template.json'
-        defaultPlatform: 'amd64'
-        deploymentManifestOutputPath: '$(System.DefaultWorkingDirectory)/config/deployment.json'
-        validateGeneratedDeploymentManifest: 'true'
-      displayName: 'Generate Deployment manifest'
-
-    - task: AzureIoTEdge@2
-      inputs:
         action: 'Deploy to IoT Edge devices'
         deploymentFilePath: '$(System.DefaultWorkingDirectory)/config/deployment.json'
-        azureSubscription: 'NOMBRE-DE-TU-SERVICE-CONNECTION'
-        iothubname: 'myIoTHubTutorialfree'
+        azureSubscription: 'Suscripción de Visual Studio Professional(6b1e7cd7-6077-46c9-943c-e28fa04c9398)'
+        iothubname: 'myiothubbs0067'
         deploymentid: '$(System.TeamProject)-devops-deployment'
         priority: '0'
-      displayName: 'Deploy to IoT Edge devices'
+        deviceOption: 'Single Device'
+        deviceId: 'EDIoT2026Identity20'
+
