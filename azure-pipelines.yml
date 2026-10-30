@@ -43,7 +43,14 @@ stages:
         # instalar iotedgedev
         python3.9 -m pip install -U iotedgedev pyOpenSSL==22.0.0 "urllib3<2" requests
       displayName: 'Install iotedgedev'
-
+    - task: AzureIoTEdge@2
+      inputs:
+        action: 'Generate deployment manifest'
+        templateFilePath: 'deployment.template.json'
+        defaultPlatform: 'amd64'
+        deploymentManifestOutputPath: '$(System.DefaultWorkingDirectory)/config/deployment.json'
+        validateGeneratedDeploymentManifest: 'true'
+      displayName: 'Generate Deployment Manifest'
     - task: AzureIoTEdge@2
       inputs:
         action: 'Deploy to IoT Edge devices'
